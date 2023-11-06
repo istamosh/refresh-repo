@@ -1,5 +1,3 @@
-# Readme
-
-Quest Log:
+# Quest Log
 - GitHub
 - Python
