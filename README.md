@@ -7,13 +7,21 @@
 - cd /.            = get back to home (C:/ for instance)
 - cd refresh-repo  = create directory named refresh-repo
 - cd ..            = go back one directory
+- cd ../other-repo = change directory by one level (going back) then access other-repo folder 
 - del .\<filename> = delete filename inside current folder
 - ls               = list all file inside current folder
+- cls              = clear terminal screen
 - ssh-keygen -t ed25519 -C "your@email.com" = generate ssh key using ed25519 algorithm with working git email
 - ssh-keygen -t rsa -b 4096 -C "your_email@example.com" = same as above but for legacy (incase ed25519 is not supported)
 - cat .\<filename> = view the file as text content
 - mkdir            = make directory/folder
+- mkdir ../<filename> = go back one level then make a directory/folder
 - rmdir            = remove or delete directory/folder
+- move <filename> ./python/ = move a file into python folder (the operation must be done within working directory)
+
+# Visual Studio Shortcuts
+- Ctrl + ` = Open internal terminal (cmd)
+- Ctrl + Shift + P = Open command palette
 
 # Visual Studio Git Status
 - U = Untracked
@@ -27,9 +35,16 @@
 - git status                                              = check the git status
 - git commit -m "title desc."                             = commit staging area with the title message
 - git commit -m "title desc." -m "desc."                  = same as above with extended description (optional)
+- git push origin master                                  = pushes changes/commit from local repo into "master" branch using origin link from the start
+- git init                                                = initialize a git repo on local directory if it isn't already there
+- git remote add origin <https/ssh address>               = add origin address for fetching or pushing
+- git remote -v                                           = view remote address
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
-- Enter file in which to save the key (local) = just enter for default path (C:\Users\user/.ssh/)
+- Enter file in which to save the key (local) = just enter for default path (C:\Users\<user>/.ssh/)
 - Enter passphrase = can be empty
 - key.pub for public key, while the other is private.
+- insert public key into SSH entry
+- start-ssh-agent.cmd = start an SSH agent
+- ssh -T git@github.com = add github's pull/push address into SSH trusted hosts (known_hosts)
