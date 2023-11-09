@@ -42,6 +42,7 @@
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
 - git checkout -b <branch name>                           = switch branch to new desired branch name
 - git checkout main                                       = switch active branch to "main" branch
+- git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
