@@ -39,6 +39,9 @@
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
+- git branch                                              = view the branch name you are working on marked by asterisk (*)
+- git checkout -b <branch name>                           = switch branch to new desired branch name
+- git checkout main                                       = switch active branch to "main" branch
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
