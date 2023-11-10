@@ -47,6 +47,7 @@
 - git pull                                                = pull any changes done in remote into local branch if there are any
 - git branch -d <branchname>                              = delete a branch
 - git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
+- git merge main                                          = if you are in branch other than main branch, this will merge both branch into main
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
@@ -59,3 +60,4 @@
 
 # Another Explanation
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
+- Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>.
