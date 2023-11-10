@@ -27,6 +27,7 @@
 - U = Untracked
 - M = Modified
 - A = Added
+- ! = Conflicted
 
 # Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
@@ -60,4 +61,4 @@
 
 # Another Explanation
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
-- Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>.
+- Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
