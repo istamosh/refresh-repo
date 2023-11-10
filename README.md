@@ -40,12 +40,13 @@
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
-- git checkout -b <branch name>                           = switch branch to new desired branch name
+- git checkout -b <branch name>                           = switch branch to new desired branch name, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 - git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
-- git pull                                                = pull any changes done in remote into local branch
+- git pull                                                = pull any changes done in remote into local branch if there are any
 - git branch -d <branchname>                              = delete a branch
+- git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
