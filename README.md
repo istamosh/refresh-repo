@@ -39,6 +39,13 @@
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
+- git branch                                              = view the branch name you are working on marked by asterisk (*)
+- git checkout -b <branch name>                           = switch branch to new desired branch name
+- git checkout main                                       = switch active branch to "main" branch
+- git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
+- git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
+- git pull                                                = pull any changes done in remote into local branch
+- git branch -d <branchname>                              = delete a branch
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
@@ -48,3 +55,6 @@
 - insert public key into SSH entry
 - start-ssh-agent.cmd = start an SSH agent
 - ssh -T git@github.com = add github's pull/push address into SSH trusted hosts (known_hosts)
+
+# Another Explanation
+- PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
