@@ -33,6 +33,8 @@
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
 - git add .                                               = add all untracked(U) and modified(M) changes into staging area (queue before commit)
 - git add app.py                                          = add app.py to staging area
+- git reset                                               = unstage any file from staging area
+- git reset app.py                                        = unstage app.py from staging area
 - git status                                              = check the git status
 - git commit -m "title desc."                             = commit staging area with the title message
 - git commit -m "title desc." -m "desc."                  = same as above with extended description (optional)
@@ -49,6 +51,11 @@
 - git branch -d <branchname>                              = delete a branch
 - git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
 - git merge main                                          = if you are in branch other than main branch, this will merge both branch into main
+- git reset HEAD                                          = undo any changes from latest commit (only on local repo)
+- git reset HEAD~1                                        = undo any changes 1-step from latest commit (ex. a commit before latest commit) (only on local repo)
+- git reset <hash>                                        = undo any changes back to latest commit pointed by hash address
+- git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages
+- git log                                                 = view commit log with its hash addresses (above is latest)
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
