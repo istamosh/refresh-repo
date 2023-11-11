@@ -42,6 +42,7 @@
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
+- git remote set-url origin <address>                     = set a remote origin URL for fetch, push, or pull.
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
 - git checkout -b <branch name>                           = switch branch to new desired branch name, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
@@ -56,6 +57,14 @@
 - git reset <hash>                                        = undo any changes back to latest commit pointed by hash address
 - git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages
 - git log                                                 = view commit log with its hash addresses (above is latest)
+
+# Git Log Navigation
+- q = Quit log viewing
+- j = Scroll down (arrow down button)
+- k = Scroll up (arrow up button)
+- PgUp = Scroll up
+- PgDn = Scroll down
+- Space = Scroll down
 
 # Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
