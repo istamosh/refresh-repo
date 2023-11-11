@@ -57,6 +57,8 @@
 - git reset <hash>                                        = undo any changes back to latest commit pointed by hash address
 - git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages
 - git log                                                 = view commit log with its hash addresses (above is latest)
+- git config --global user.email                          = view global settings of email address used for commits
+- git config --global user.email <email>                  = set global email address for commits
 
 # Git Log Navigation
 - q = Quit log viewing
