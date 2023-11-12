@@ -46,8 +46,10 @@
 - git remote set-url origin <address>                     = set a remote origin URL for fetch, push, or pull.
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
 - git branch -a                                           = view all detailed local and remote branches
+- git branch -a -vv                                       = view all listed branch with their hash and commit message, useful for knowing the upstream of local branches
 - git branch -d <branchname>                              = delete a local branch
 - git branch <branchname> <hash>                          = create a local branch based on revision hash (start at one point in commit history based on hash number)
+- git branch -m <newbranchname>                           = rename local branch you currently on
 - git checkout -b <branch name>                           = switch local branch to new desired branch name and make it active, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
@@ -63,6 +65,11 @@
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email <email>                  = set global email address for commits
+
+# Merging
+1. git checkout <branchname> = checkout this branch as a base of merging process
+2. git merge <featurename> = merge feature branch into base branch
+3. git push origin main = push the merging process into remote main branch
 
 # Git Log Navigation
 - q = Quit log viewing
