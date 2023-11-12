@@ -45,13 +45,14 @@
 - git remote -v                                           = view remote address
 - git remote set-url origin <address>                     = set a remote origin URL for fetch, push, or pull.
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
+- git branch -a                                           = view all detailed local and remote branches
+- git branch -d <branchname>                              = delete a local branch
 - git checkout -b <branch name>                           = switch branch to new desired branch name, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 - git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
 - git pull                                                = pull any changes done in remote into local branch if there are any
 - git pull origin <branch>                                = same as above but with specific remote address and branch name
-- git branch -d <branchname>                              = delete a branch locally
 - git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
 - git merge main                                          = if you are in branch other than main branch, this will merge both branch into main
 - git reset HEAD                                          = undo any changes from latest commit (only on local repo)
