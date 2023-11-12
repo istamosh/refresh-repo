@@ -47,7 +47,8 @@
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
 - git branch -a                                           = view all detailed local and remote branches
 - git branch -d <branchname>                              = delete a local branch
-- git checkout -b <branch name>                           = switch branch to new desired branch name, any changes within local before adding and commiting will be dragged into new branch
+- git branch <branchname> <hash>                          = create a local branch based on revision hash (start at one point in commit history based on hash number)
+- git checkout -b <branch name>                           = switch local branch to new desired branch name and make it active, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 - git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
@@ -84,3 +85,5 @@
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
 - Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
 - Fork is an act of copying other author's full project into self for contribution or studying the codes inside it. For contribution purpose, modify some file you desire then create pull request to original author's project, if they accept your request, they will merge your branch into their branch and you are marked as one of their contributors.
+- HEAD is an active branch (currently working on) or checked out branch ("git checkout" command)
+- 90% of the time working on branches means working locally.
