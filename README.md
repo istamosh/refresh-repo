@@ -50,6 +50,7 @@
 - git branch -d <branchname>                              = delete a local branch
 - git branch <branchname> <hash>                          = create a local branch based on revision hash (start at one point in commit history based on hash number)
 - git branch -m <newbranchname>                           = rename local branch you currently on
+- git branch -r                                           = view only remote branches
 - git checkout -b <branch name>                           = switch local branch to new desired branch name and make it active, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
@@ -65,6 +66,8 @@
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email <email>                  = set global email address for commits
+- git clone <http/ssh address>                            = clone remote repo into your current directory (local)
+- git clone <http/ssh address> <dirname>                  = clone remote repo into ./dirname folder
 
 # Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
