@@ -39,6 +39,7 @@
 - git commit -m "title desc."                             = commit staging area with the title message
 - git commit -m "title desc." -m "desc."                  = same as above with extended description (optional)
 - git push origin master                                  = pushes changes/commit from local repo into "master" branch using origin link from the start
+- git push origin --delete <branchname>                   = delete a remote branch
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
