@@ -31,6 +31,8 @@
 
 # Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
+- git clone <http/ssh address>                            = clone remote repo into your current directory (local)
+- git clone <http/ssh address> <dirname>                  = clone remote repo into ./dirname folder
 - git add .                                               = add all untracked(U) and modified(M) changes into staging area (queue before commit)
 - git add app.py                                          = add app.py to staging area
 - git reset                                               = unstage any file from staging area
@@ -66,13 +68,13 @@
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email <email>                  = set global email address for commits
-- git clone <http/ssh address>                            = clone remote repo into your current directory (local)
-- git clone <http/ssh address> <dirname>                  = clone remote repo into ./dirname folder
 
 # Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
 2. git merge <featurename> = merge feature branch into base branch
 3. git push origin main = push the merging process into remote main branch
+4. git branch -d <branchname> = delete local branch after merge (optional)
+5. git push origin -d <branchname> = delete remote branch after merge (optional)
 
 # Git Log Navigation
 - q = Quit log viewing
