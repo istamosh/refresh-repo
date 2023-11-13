@@ -68,6 +68,7 @@
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email <email>                  = set global email address for commits
+- git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 
 # Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
