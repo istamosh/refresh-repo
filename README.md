@@ -60,12 +60,14 @@
 - git pull                                                = pull any changes done in remote into local branch if there are any
 - git pull origin <branch>                                = same as above but with specific remote address and branch name
 - git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
-- git merge main                                          = if you are in branch other than main branch, this will merge both branch into main
+- git merge main                                          = if you are in branch other than main branch, this will merge both branch INTO main
+- git merge main --no-ff                                  = merging with no fast forward method (default is ff)
 - git reset HEAD                                          = undo any changes from latest commit (only on local repo)
 - git reset HEAD~1                                        = undo any changes 1-step from latest commit (ex. a commit before latest commit) (only on local repo)
 - git reset <hash>                                        = undo any changes back to latest commit pointed by hash address
-- git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages
+- git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages back to hash checkpoint or HEAD number
 - git log                                                 = view commit log with its hash addresses (above is latest)
+- git log --oneline --graph --all                         = shows all graphical log of commits in one line
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email <email>                  = set global email address for commits
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
@@ -101,3 +103,4 @@
 - HEAD is an active branch (currently working on) or checked out branch ("git checkout" command)
 - 90% of the time working on branches means working locally.
 - Rebase is an act to re-anchor a feature branch against the master branch IF the master have new commit (ahead of feature branch) on the remote while you working on feature, ofcourse after you do pull check on master. This can be done by checkout on feature then "git rebase master", a test will performed (if there are no conflict) and a new anchor is placed on that recent master commit (feature branch will move forward to last master commit), then you checkout back to master then do "git rebase feature-branch" to merge any commits on feature branch into master (any number of commits on feature will be applied to master, thus rewriting master's history).
+- Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
