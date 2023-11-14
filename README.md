@@ -73,6 +73,7 @@
 - git config --global user.email "<email>"                = set global email address for commits
 - git config --global user.name "<name>"                  = set global name for commits
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
+- git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
 
 # Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
@@ -106,3 +107,4 @@
 - 90% of the time working on branches means working locally.
 - Rebase is an act to re-anchor a feature branch against the master branch IF the master have new commit (ahead of feature branch) on the remote while you working on feature, ofcourse after you do pull check on master. This can be done by checkout on feature then "git rebase master", a test will performed (if there are no conflict) and a new anchor is placed on that recent master commit (feature branch will move forward to last master commit), then you checkout back to master then do "git rebase feature-branch" to merge any commits on feature branch into master (any number of commits on feature will be applied to master, thus rewriting master's history).
 - Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
+- git fetch is different from git pull because fetch copies any changes done in remote repo into new local branch named origin/<branch>.
