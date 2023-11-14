@@ -16,7 +16,8 @@
 - cat .\<filename> = view the file as text content
 - mkdir            = make directory/folder
 - mkdir ../<filename> = go back one level then make a directory/folder
-- rmdir            = remove or delete directory/folder
+- rmdir .\<foldername>\ = remove or delete directory/folder
+- rmdir .\<foldername>\ -force = force delete directory/folder
 - move <filename> ./python/ = move a file into python folder (the operation must be done within working directory)
 
 # Visual Studio Shortcuts
@@ -69,7 +70,8 @@
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git log --oneline --graph --all                         = shows all graphical log of commits in one line
 - git config --global user.email                          = view global settings of email address used for commits
-- git config --global user.email <email>                  = set global email address for commits
+- git config --global user.email "<email>"                = set global email address for commits
+- git config --global user.name "<name>"                  = set global name for commits
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 
 # Merging
