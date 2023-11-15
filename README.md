@@ -1,9 +1,10 @@
-# Quest Log
+# Readme
+Quest Log
 - GitHub
 - VS
 - Python
 
-# Windows Terminal Directory Nav.
+Windows Terminal Directory Nav.
 - cd /.            = get back to home (C:/ for instance)
 - cd refresh-repo  = create directory named refresh-repo
 - cd ..            = go back one directory
@@ -20,17 +21,22 @@
 - rmdir .\<foldername>\ -force = force delete directory/folder
 - move <filename> ./python/ = move a file into python folder (the operation must be done within working directory)
 
-# Visual Studio Shortcuts
+Visual Studio Shortcuts
 - Ctrl + ` = Open internal terminal (cmd)
 - Ctrl + Shift + P = Open command palette
 
-# Visual Studio Git Status
+Visual Studio Git Status
 - U = Untracked
 - M = Modified
 - A = Added
 - ! = Conflicted
 
-# Git Cheat Sheet
+Check all remote branches
+- git remote update = check remote branches
+- git pull origin <branch> = pull any changes done on remote and sync. into local
+- git branch -r
+
+Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
 - git clone <http/ssh address>                            = clone remote repo into your current directory (local)
 - git clone <http/ssh address> <dirname>                  = clone remote repo into ./dirname folder
@@ -47,6 +53,7 @@
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
 - git remote set-url origin <address>                     = set a remote origin URL for fetch, push, or pull.
+- git remote update                                       = update the state of remote branches.
 - git branch                                              = view the branch name you are working on marked by asterisk (*)
 - git branch -a                                           = view all detailed local and remote branches
 - git branch -a -vv                                       = view all listed branch with their hash and commit message, useful for knowing the upstream of local branches
@@ -75,14 +82,14 @@
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 - git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
 
-# Merging
+Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
 2. git merge <featurename> = merge feature branch into base branch
 3. git push origin main = push the merging process into remote main branch
 4. git branch -d <branchname> = delete local branch after merge (optional)
 5. git push origin -d <branchname> = delete remote branch after merge (optional)
 
-# Git Log Navigation
+Git Log Navigation
 - q = Quit log viewing
 - j = Scroll down (arrow down button)
 - k = Scroll up (arrow up button)
@@ -90,16 +97,25 @@
 - PgDn = Scroll down
 - Space = Scroll down
 
-# Using SSH (optional, Windows)
+Using SSH (optional, Windows)
 - ssh-keygen -t ed25519 -C "your@email.com"
 - Enter file in which to save the key (local) = just enter for default path (C:\Users\<user>/.ssh/)
 - Enter passphrase = can be empty
 - key.pub for public key, while the other is private.
-- insert public key into SSH entry
+- insert public key into account's SSH entry
 - start-ssh-agent.cmd = start an SSH agent
 - ssh -T git@github.com = add github's pull/push address into SSH trusted hosts (known_hosts)
+- git clone <repoSSHaddress>
 
-# Another Explanation
+Rebasing
+- git checkout master
+- git pull origin master = check master's remote commits
+- git checkout feature-branch
+- git rebase master = check for conflics, then move branch's anchor point into master's latest commit
+- git checkout master
+- git rebase feature-branch = merge commits on feature-branch into master 
+
+Another Explanation
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
 - Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
 - Fork is an act of copying other author's full project into self for contribution or studying the codes inside it. For contribution purpose, modify some file you desire then create pull request to original author's project, if they accept your request, they will merge your branch into their branch and you are marked as one of their contributors.
