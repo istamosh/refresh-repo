@@ -32,9 +32,11 @@ Visual Studio Git Status
 - ! = Conflicted
 
 Check all remote branches
-- git remote update = check remote branches
-- git pull origin <branch> = pull any changes done on remote and sync. into local
-- git branch -r
+1. git remote update = check remote branches
+2. git branch -r
+3. git checkout <branch>
+4. git status
+5. git pull origin <branch> = pull any changes done on remote and sync. into local 
 
 Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
