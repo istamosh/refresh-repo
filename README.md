@@ -28,7 +28,7 @@ Visual Studio Shortcuts
 Visual Studio Git Status
 - U = Untracked
 - M = Modified
-- A = Added
+- A = Added after tracked with git add
 - ! = Conflicted
 
 Check all remote branches
@@ -83,6 +83,8 @@ Git Cheat Sheet
 - git config --global user.name "<name>"                  = set global name for commits
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 - git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
+- git stash save                                          = stash any changes after git add before working on other branch
+- git stash pop                                           = pop out stashed works on current branch
 
 Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
@@ -90,6 +92,12 @@ Merging
 3. git push origin main = push the merging process into remote main branch
 4. git branch -d <branchname> = delete local branch after merge (optional)
 5. git push origin -d <branchname> = delete remote branch after merge (optional)
+
+Stashing changes and switching
+1. git add <files>
+2. git stash save
+3. git checkout <branch>
+4. git stash pop = if you want to pop out saved stash
 
 Git Log Navigation
 - q = Quit log viewing
@@ -126,3 +134,4 @@ Another Explanation
 - Rebase is an act to re-anchor a feature branch against the master branch IF the master have new commit (ahead of feature branch) on the remote while you working on feature, ofcourse after you do pull check on master. This can be done by checkout on feature then "git rebase master", a test will performed (if there are no conflict) and a new anchor is placed on that recent master commit (feature branch will move forward to last master commit), then you checkout back to master then do "git rebase feature-branch" to merge any commits on feature branch into master (any number of commits on feature will be applied to master, thus rewriting master's history).
 - Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
 - git fetch is different from git pull because fetch copies any changes done in remote repo into new local branch named origin/<branch>.
+- git stash is used for save changes for uncommited works; is useful for making incomplete changes on current branch then don't want to bring those changes prior to switching branch.
