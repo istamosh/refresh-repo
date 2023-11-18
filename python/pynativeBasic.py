@@ -22,3 +22,13 @@ for i in range(10):
         print("Current Number",i,"Previous Number",i,"Sum:",i)
     else:
         print("Current Number",i,"Previous Number",j,"Sum:",i+j)
+
+# Exercise 3: Print characters from a string that are present at an even index number
+# Write a program to accept a string from the user and display characters that are present at an even index number.
+print("3. Answer:")
+string = "pynative"
+print("Original string is", string)
+print("Printing only even index chars (0,2,4,6)")
+for i in string:
+    if (string.index(i) % 2 == 0):
+        print(i)
