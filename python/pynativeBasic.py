@@ -59,9 +59,9 @@ print("5. Answer:")
 def checkHeadTail(list):
     print("Given list:", list)
     if (list[0] == list[-1]):
-        return print("Result is:", True)
+        print("Result is:", True)
     else:
-        return print("Result is:", False)
+        print("Result is:", False)
 
 checkHeadTail([10, 20, 30, 40, 10])
 checkHeadTail([75, 65, 35, 75, 30])
@@ -77,3 +77,40 @@ def divisibleBy5(list):
     print("Items divisible by 5:",temp_list)
 
 divisibleBy5([10,20,33,46,55])
+
+# Exercise 7: Return the count of a given substring from a string
+# Write a program to find how many times substring “Emma” appears in the given string.
+print("7. Answer:")
+def stringFinder(string, sentence):
+    splits = sentence.split(" ")
+    x = 0
+    for i in splits:
+        if (string == i):
+            x += 1
+    print(sentence)
+    print(string,"appeared",x,"times.")
+
+stringFinder("Emma", "Emma is good developer. Emma is a writer")
+
+# Exercise 8: Print the following pattern
+# 1
+# 2 2
+# 3 3 3
+# etc.
+print("8. Answer:")
+def drawTriangleNumber(layerCount):
+    temp_string = ""
+    for i in range(1, layerCount+1):
+        temp_string += str(i)+" "
+        print(temp_string[:-1])
+        
+drawTriangleNumber(5)
+
+# Exercise 9: Check Palindrome Number
+# Write a program to check if the given number is a palindrome number.
+# A palindrome number is a number that is the same after reverse. For example, 545, is the palindrome numbers
+print("9. Answer:")
+def checkPalindrome(number):
+    for i in str(number):
+        print(i)
+checkPalindrome(15342)
