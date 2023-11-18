@@ -31,14 +31,14 @@ string = "pynative"
 
 print("Original string is", string)
 print("Printing only even index chars (0, 2, 4, 6)")
-def evenIndexes(str):
+def displayEvenChars(str):
     processedString = ""
     for i in str:
         if (str.index(i) % 2 == 0):
             processedString += i
-    return processedString
+    print(", ".join(processedString))
 
-print(", ".join(evenIndexes(string)))
+displayEvenChars(string)
 
 # Exercise 4: Remove first n characters from a string
 # Write a program to remove characters from a string starting from zero up to n and return a new string.
@@ -48,7 +48,20 @@ def removeChar(givenString, beginIndex):
     constructString = ""
     for i in givenString[beginIndex:]:
         constructString += i
-    return constructString
+    print("Sliced the first",beginIndex,"chars:", constructString)
 
-print("Sliced the first 4 chars:", removeChar(string, 4))
-print("Sliced the first 2 chars:", removeChar(string, 2))
+removeChar(string, 4)
+removeChar(string, 2)
+
+# Exercise 5: Check if the first and last number of a list is the same
+# Write a function to return True if the first and last number of a given list is same. If numbers are different then return False.
+print("5. Answer:")
+def checkHeadTail(list):
+    print("Given list:", list)
+    if (list[0] == list[-1]):
+        return print("Result is:", True)
+    else:
+        return print("Result is:", False)
+
+checkHeadTail([10, 20, 30, 40, 10])
+checkHeadTail([75, 65, 35, 75, 30])
