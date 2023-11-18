@@ -26,9 +26,29 @@ for i in range(10):
 # Exercise 3: Print characters from a string that are present at an even index number
 # Write a program to accept a string from the user and display characters that are present at an even index number.
 print("3. Answer:")
+
 string = "pynative"
+
 print("Original string is", string)
-print("Printing only even index chars (0,2,4,6)")
-for i in string:
-    if (string.index(i) % 2 == 0):
-        print(i)
+print("Printing only even index chars (0, 2, 4, 6)")
+def evenIndexes(str):
+    processedString = ""
+    for i in str:
+        if (str.index(i) % 2 == 0):
+            processedString += i
+    return processedString
+
+print(", ".join(evenIndexes(string)))
+
+# Exercise 4: Remove first n characters from a string
+# Write a program to remove characters from a string starting from zero up to n and return a new string.
+print("4. Answer:")
+
+def removeChar(givenString, beginIndex):
+    constructString = ""
+    for i in givenString[beginIndex:]:
+        constructString += i
+    return constructString
+
+print("Sliced the first 4 chars:", removeChar(string, 4))
+print("Sliced the first 2 chars:", removeChar(string, 2))
