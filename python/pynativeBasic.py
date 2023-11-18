@@ -65,3 +65,15 @@ def checkHeadTail(list):
 
 checkHeadTail([10, 20, 30, 40, 10])
 checkHeadTail([75, 65, 35, 75, 30])
+
+# Exercise 6: Display numbers divisible by 5 from a list
+# Iterate the given list of numbers and print only those numbers which are divisible by 5
+print("6. Answer:")
+def divisibleBy5(list):
+    temp_list = []
+    for i in list:
+        if (i % 5 == 0):
+            temp_list.append(i)
+    print("Items divisible by 5:",temp_list)
+
+divisibleBy5([10,20,33,46,55])
