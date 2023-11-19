@@ -111,6 +111,14 @@ drawTriangleNumber(5)
 # A palindrome number is a number that is the same after reverse. For example, 545, is the palindrome numbers
 print("9. Answer:")
 def checkPalindrome(number):
+    temp_list = []
     for i in str(number):
-        print(i)
-checkPalindrome(15342)
+        temp_list.append(i)
+
+    rev_list = list(reversed(temp_list))
+
+    if (temp_list == rev_list):
+        print(number,"is palindrome number.")
+    else: print(number,"is not palindrome number.")
+
+checkPalindrome(533767767335)
