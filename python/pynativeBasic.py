@@ -139,3 +139,39 @@ def exercise10(list, list2):
     print("result list:", temp_list)
 
 exercise10((10, 20, 25, 30, 35), (40, 45, 60, 75, 90))
+
+# Exercise 11: Write a Program to extract each digit from an integer in the reverse order.
+# For example, If the given int is 7536, the output shall be “6 3 5 7“, with a space separating the digits.
+print("11. Answer:")
+def reverseInt2Str(int):
+    temp_list = []
+    for i in reversed(str(int)):
+        temp_list.append(i)
+    print(" ".join(temp_list))
+reverseInt2Str(5623)
+
+# Exercise 12: Calculate income tax for the given income by adhering to the rules below
+# Taxable Income    Rate (in %)
+# First $10000      0
+# Next $10000       10
+# The remaining     20
+# For example, suppose the taxable income is 45000, and the income tax payable is
+# 10000*0% + 10000*10%  + 25000*20% = $6000.
+print("12. Answer:")
+def calculateTotalTax(int):
+    if (int > 20000):
+        remainder = int - 20000
+        tax = float(remainder * (20/100))
+        total = float(1000 + tax)
+        print("taxable income: $",int)
+        print("income tax: $",total)
+    elif (int > 10000):
+        remainder = int - 10000
+        total = float(remainder * (10/100))
+        print("taxable income: $",int)
+        print("income tax: $",total)
+    elif (int > 0):
+        print("this income is not taxable.( $",int,")")
+    else: print("invalid input")
+calculateTotalTax(45000)
+
