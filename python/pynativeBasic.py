@@ -117,8 +117,25 @@ def checkPalindrome(number):
 
     rev_list = list(reversed(temp_list))
 
+    print("original number", number)
     if (temp_list == rev_list):
-        print(number,"is palindrome number.")
-    else: print(number,"is not palindrome number.")
+        print("Yes, given number is palindrome number.")
+    else: 
+        print("No, given number is not palindrome number.")
 
 checkPalindrome(533767767335)
+
+# Exercise 10: Create a new list from two list using the following condition
+# Given two list of numbers, write a program to create a new list such that the new list should contain odd numbers from the first list and even numbers from the second list.
+print("10. Answer:")
+def exercise10(list, list2):
+    temp_list = []
+    for i in list:
+        if (i % 2 != 0):
+            temp_list.append(i)
+    for i in list2:
+        if (i % 2 == 0):
+            temp_list.append(i)
+    print("result list:", temp_list)
+
+exercise10((10, 20, 25, 30, 35), (40, 45, 60, 75, 90))
