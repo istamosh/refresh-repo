@@ -200,12 +200,18 @@ def upsideDownAsteriskPyramid(layer):
 upsideDownAsteriskPyramid(6)
 
 # Exercise 15: Write a function called exponent(base, exp) that returns an int value of base raises to the power of exp.
+# Note here exp is a non-negative integer, and the base is an integer.
 print("15. Answer:")
 def exponent(num, exponent):
-    temp_string = str(num)
-    for i in range(1, exponent):
-        temp_string += " *"+str(num)
+    if not type(num) is int or not type(exponent) is int:
+        print("Sorry, one of the input is not a number.")
+    elif exponent < 0:
+        print("Sorry, no exponents input below zero.")
+    else:
+        temp_string = str(num)
+        for i in range(1, exponent):
+            temp_string += " *"+str(num)
 
-    print("base = ",num,'\n',"exponent = ",exponent,'\n',num," raises to the power of ",exponent," : ",num**exponent," i.e. ","(",temp_string," = ",num**exponent,")", sep='')
+        print("base = ",num,'\n',"exponent = ",exponent,'\n',num," raises to the power of ",exponent," : ",num**exponent," i.e. ","(",temp_string," = ",num**exponent,")", sep='')
 
-exponent(5, 3)
+exponent(2, 5)
