@@ -195,5 +195,6 @@ def upsideDownAsteriskPyramid(layer):
     for i in range(layer):
         temp_string += str("*")+" "
     for i in range(layer):
-        print(temp_string)
+        print(temp_string[i*2:])
+        
 upsideDownAsteriskPyramid(5)
