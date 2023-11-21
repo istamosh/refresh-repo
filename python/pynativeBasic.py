@@ -175,3 +175,25 @@ def calculateTotalTax(int):
     else: print("invalid input")
 calculateTotalTax(45000)
 
+# Exercise 13: Print multiplication table from 1 to 10
+print("13. Answer:")
+
+def multiplicationTable(input):
+    print("Table multiplication of",input,"x",input)
+    for i in range(1, input+1):
+        temp_string = ""
+        for j in range(1, input+1):
+            temp_string += str(i * j)+" "
+        print(temp_string[:-1])
+
+multiplicationTable(10)
+
+# Exercise 14: Print a downward Half-Pyramid Pattern of Star (asterisk)
+print("14. Answer:")
+def upsideDownAsteriskPyramid(layer):
+    temp_string = ""
+    for i in range(layer):
+        temp_string += str("*")+" "
+    for i in range(layer):
+        print(temp_string)
+upsideDownAsteriskPyramid(5)
