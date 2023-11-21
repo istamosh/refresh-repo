@@ -196,5 +196,16 @@ def upsideDownAsteriskPyramid(layer):
         temp_string += str("*")+" "
     for i in range(layer):
         print(temp_string[i*2:])
-        
-upsideDownAsteriskPyramid(5)
+
+upsideDownAsteriskPyramid(6)
+
+# Exercise 15: Write a function called exponent(base, exp) that returns an int value of base raises to the power of exp.
+print("15. Answer:")
+def exponent(num, exponent):
+    temp_string = str(num)
+    for i in range(1, exponent):
+        temp_string += " *"+str(num)
+
+    print("base = ",num,'\n',"exponent = ",exponent,'\n',num," raises to the power of ",exponent," : ",num**exponent," i.e. ","(",temp_string," = ",num**exponent,")", sep='')
+
+exponent(5, 3)
