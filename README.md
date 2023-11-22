@@ -125,7 +125,16 @@ Rebasing
 - git checkout feature-branch
 - git rebase master = check for conflics, then move branch's anchor point into master's latest commit
 - git checkout master
-- git rebase feature-branch = merge commits on feature-branch into master 
+- git rebase feature-branch = merge commits on feature-branch into master
+
+Merge Conflict (No fast-forwarding)
+- git checkout main = merge feature to main
+- git merge feature --no-ff
+- (conflict occured, edit conflicted file, then save)
+- git status
+- git add .
+- git commit -m "fix conflicts..."
+- git push
 
 Another Explanation
 - Checkout act will bring all uncommited changes into active branch.
