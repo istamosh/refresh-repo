@@ -9,3 +9,15 @@ try:
     print(x,"*",y,"=",int(x)*int(y))
 except ValueError as ve:
     print("input must be numbers. e.g.: \"5 10\" (without double quotes sign)")
+
+# Exercise 2: Display three string “Name”, “Is”, “James” as “Name**Is**James”
+# Use the print() function to format the given words in the mentioned format. Display the ** separator between each string.
+print("2. Answer:")
+
+def sentenceGen(name):
+    _x = "Name"
+    _y = "Is"
+    _z = name
+    print(_x, _y, _z, sep='**')
+
+sentenceGen(input("Enter your name: "))
