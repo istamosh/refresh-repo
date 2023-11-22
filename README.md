@@ -4,6 +4,10 @@ Quest Log
 - VS
 - Python
 
+Apps Used
+- Editor : Visual Studio Code
+- VS Extensions : Python, Git Graph, Material Icon
+
 Windows Terminal Directory Nav.
 - cd /.            = get back to home (C:/ for instance)
 - cd refresh-repo  = create directory named refresh-repo
@@ -47,6 +51,7 @@ Git Cheat Sheet
 - git add app.py                                          = add app.py to staging area
 - git reset                                               = unstage any file from staging area
 - git reset app.py                                        = unstage app.py from staging area
+- git reset --hard <commithash>                           = hard reset and unstage any changes back to last commit checkpoint
 - git status                                              = check the git status
 - git commit -m "title desc."                             = commit staging area with the title message
 - git commit -m "title desc." -m "desc."                  = same as above with extended description (optional)
@@ -76,8 +81,6 @@ Git Cheat Sheet
 - git merge main --no-ff                                  = merging with no fast forward method (default is ff)
 - git reset HEAD                                          = undo any changes from latest commit (only on local repo)
 - git reset HEAD~1                                        = undo any changes 1-step from latest commit (ex. a commit before latest commit) (only on local repo)
-- git reset <hash>                                        = undo any changes back to latest commit pointed by hash address
-- git reset --hard <hash or HEAD~number(arg)>             = undo any changes and get rid of stages back to hash checkpoint or HEAD number
 - git log                                                 = view commit log with its hash addresses (above is latest)
 - git log --oneline --graph --all                         = shows all graphical log of commits in one line
 - git config --global user.email                          = view global settings of email address used for commits
@@ -140,6 +143,7 @@ Another Explanation
 - Checkout act will bring all uncommited changes into active branch.
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
 - Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
+- To minimize branch conflicts and navigating easier, use graph feature provided by Git.
 - Fork is an act of copying other author's full project into self for contribution or studying the codes inside it. For contribution purpose, modify some file you desire then create pull request to original author's project, if they accept your request, they will merge your branch into their branch and you are marked as one of their contributors.
 - HEAD is an active branch (currently working on) or checked out branch ("git checkout" command)
 - 90% of the time working on branches means working locally.
@@ -147,3 +151,5 @@ Another Explanation
 - Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
 - git fetch is different from git pull because fetch copies any changes done in remote repo into new local branch named origin/<branch>.
 - git stash is used for save changes for uncommited works; is useful for making incomplete changes on current branch then don't want to bring those changes prior to switching branch.
+- git revert is the easiest and safest way to undo a commit, this way creates a new commit that undoes the desired previous commit (A(created file1), B(edited file1), C(created file2), D(revert "edited file1")), thus making it stay in commit history (helps for tracking mistakes)
+- git reset is used for deleting commits and getting back to desired commit pointer, e.g A-B-C-D (latest is D), git reset C will result in A-B-C, while still maintaining local saved files in place and unstage them. To remove local changes too, use --hard parameter, this will effectively going back in time and loses latest tracks permanently, so proceed with caution.
