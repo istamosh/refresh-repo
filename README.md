@@ -9,6 +9,7 @@ Windows Terminal Directory Nav.
 - cd refresh-repo  = create directory named refresh-repo
 - cd ..            = go back one directory
 - cd ../other-repo = change directory by one level (going back) then access other-repo folder 
+- cd . > <filename> = create a file
 - del .\<filename> = delete filename inside current folder
 - ls               = list all file inside current folder
 - cls              = clear terminal screen
@@ -65,6 +66,7 @@ Git Cheat Sheet
 - git branch -r                                           = view only remote branches
 - git checkout -b <branch name>                           = switch local branch to new desired branch name and make it active, any changes within local before adding and commiting will be dragged into new branch
 - git checkout main                                       = switch active branch to "main" branch
+- git checkout -- <filename>                              = undo any modified uncommited changes of a file (remove M flag)
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 - git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
 - git pull                                                = pull any changes done in remote into local branch if there are any
@@ -126,6 +128,7 @@ Rebasing
 - git rebase feature-branch = merge commits on feature-branch into master 
 
 Another Explanation
+- Checkout act will bring all uncommited changes into active branch.
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
 - Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
 - Fork is an act of copying other author's full project into self for contribution or studying the codes inside it. For contribution purpose, modify some file you desire then create pull request to original author's project, if they accept your request, they will merge your branch into their branch and you are marked as one of their contributors.
