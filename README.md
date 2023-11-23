@@ -39,9 +39,10 @@ Visual Studio Git Status
 Check all remote branches
 1. git remote update = check remote branches
 2. git branch -r
-3. git checkout <branch>
-4. git status
-5. git pull origin <branch> = pull any changes done on remote and sync. into local 
+3. git log --oneline = check log
+4. git checkout <branch>
+5. git status
+6. git pull origin <branch> = pull any changes done on remote and sync. into local 
 
 Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
@@ -55,8 +56,12 @@ Git Cheat Sheet
 - git status                                              = check the git status
 - git commit -m "title desc."                             = commit staging area with the title message
 - git commit -m "title desc." -m "desc."                  = same as above with extended description (optional)
+- git commit -am "<message>"                              = "git add ." + "git commit -m" shortcut (doesn't work if there are any file with A and U tag on Visual Studio)
+- git commit --amend -m "<commit msg>"                    = Edit the typo of latest commit message
+- git commit --amend --no-edit                            = Update the latest commit to include unstaged files that were left behind with no changes of commit message
 - git push origin master                                  = pushes changes/commit from local repo into "master" branch using origin link from the start
 - git push origin --delete <branchname>                   = delete a remote branch
+- git push origin <branch> --force                        = this will overwrite all states in remote to be synced with yours, use this ONLY if there are no other remote push other than yours
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
@@ -70,26 +75,31 @@ Git Cheat Sheet
 - git branch -m <newbranchname>                           = rename local branch you currently on
 - git branch -r                                           = view only remote branches
 - git checkout -b <branch name>                           = switch local branch to new desired branch name and make it active, any changes within local before adding and commiting will be dragged into new branch
+- git checkout -                                          = checkout to previous branch (if you forget or don't want to type the name all the way)
 - git checkout main                                       = switch active branch to "main" branch
 - git checkout -- <filename>                              = undo any modified uncommited changes of a file (remove M flag)
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
 - git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
 - git pull                                                = pull any changes done in remote into local branch if there are any
 - git pull origin <branch>                                = same as above but with specific remote address and branch name
-- git commit -am "<message>"                              = shortcut for add modified file into staging area and insert commit message (doesn't work if there are any file with A tag on Visual Studio)
 - git merge main                                          = if you are in branch other than main branch, this will merge both branch INTO main
 - git merge main --no-ff                                  = merging with no fast forward method (default is ff)
+- git revert <commit hash>                                = undo a commit (pointed by hash) with a new commit (doesn't remove the original commit from the history)
 - git reset HEAD                                          = undo any changes from latest commit (only on local repo)
 - git reset HEAD~1                                        = undo any changes 1-step from latest commit (ex. a commit before latest commit) (only on local repo)
 - git log                                                 = view commit log with its hash addresses (above is latest)
+- git log --oneline                                       = view one-liner commit log
 - git log --oneline --graph --all                         = shows all graphical log of commits in one line
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email "<email>"                = set global email address for commits
 - git config --global user.name "<name>"                  = set global name for commits
+- git config --global alias.ac "commit -am"               = set alias for automatic add and commit, followed by "git ac <commit message>"
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 - git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
-- git stash save                                          = stash any changes after git add before working on other branch
-- git stash pop                                           = pop out stashed works on current branch
+- git stash save <savename>                               = stash any changes after git add before working on other branch
+- git stash list                                          = view list of stashes (addressed by index)
+- git stash apply <index number>                          = apply stashed files into current branch
+- git stash pop <savename>                                = pop out stashed works on current branch (similar to apply)
 
 Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
@@ -123,21 +133,29 @@ Using SSH (optional, Windows)
 - git clone <repoSSHaddress>
 
 Rebasing
-- git checkout master
-- git pull origin master = check master's remote commits
-- git checkout feature-branch
-- git rebase master = check for conflics, then move branch's anchor point into master's latest commit
-- git checkout master
-- git rebase feature-branch = merge commits on feature-branch into master
+1. git checkout feature-branch
+2. (switched to feature-branch)
+3. git rebase master --interactive = pulls out interactive view of branch hash to be picked or squashed
+3a. pick = to be used for commits, squash = use and squash two commits into one commit
+3b. (if you are done, save the interactive file (git-rebase-todo) and close it.)
+3c. (another file popped up named COMMITMSG, edit commit messages for each commit, then save and close it.)
 
 Merge Conflict (No fast-forwarding)
-- git checkout main = merge feature to main
-- git merge feature --no-ff
-- (conflict occured, edit conflicted file, then save)
-- git status
-- git add .
-- git commit -m "fix conflicts..."
-- git push
+1. git checkout main = merge feature to main
+2. git merge feature --no-ff
+3. (conflict occured, edit conflicted file, then save)
+4. git status
+5. git add .
+6. git commit -m "fix conflicts..."
+7. git push
+
+Using --amend to revise a latest commit (works only on local)
+- git commit --amend -m "<commit msg>" = update the latest commit message because of a typo or something without changing the already tracked commits
+-- If there any left behind files post-commit:
+1. git add .
+2. git commit --amend = add staged files to latest commit without adding new commit (use --no-edit for same message, or -m for update the message too)
+-- If the commit already pushed into the remote repo:
+- git push origin <branch> --force = this will overwrite all states in remote to be synced with yours, use this ONLY if there are no other remote push other than yours
 
 Another Explanation
 - Checkout act will bring all uncommited changes into active branch.
