@@ -27,6 +27,9 @@ Variable Declaration
 More explanation
 - Immutable is variable declaration containing a value that can't be changed, while mutable can.
 
+String manipulation:
+- print("{:.2f}".format("105")) = change number into two digit floating number (105.00)
+
 String slice:
 - someString[2:] = remove the first two chars
 - someString[:-1] = remove the last one char
