@@ -9,7 +9,7 @@ while True:
         x, y = input("Enter the numbers to be multiplied (separated by space):").split()
         print(x,"*",y,"=",int(x)*int(y))
     except ValueError:
-        print("input must be numbers. e.g.: \"5 10\" (without double quotes sign)")
+        print("input must be integer numbers. e.g.: \"5 10\" (without double quotes sign)")
         continue
     break
 
@@ -36,6 +36,20 @@ while True:
     try:
         octalConvert(input("Input number to be converted as octal: "))
     except ValueError:
-       print("This is invalid input, please input a number")
+       print("This is invalid input, please input integer number")
        continue
+    break
+
+# Exercise 4: Display float number with 2 decimal places using print()
+print("4. Answer:")
+
+def twoDigitFloat(x):
+    print("{:.2f}".format(x))
+
+while True:
+    try:
+        twoDigitFloat(float(input("Enter int or float number: ")))
+    except ValueError:
+        print("This is invalid input. Please input either integer or float: \"14.513\" or \"15\"")
+        continue
     break
