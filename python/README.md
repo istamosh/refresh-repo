@@ -26,3 +26,18 @@ Variable Declaration
 
 More explanation
 - Immutable is variable declaration containing a value that can't be changed, while mutable can.
+
+String slice:
+- someString[2:] = remove the first two chars
+- someString[:-1] = remove the last one char
+
+Code Block Cheat Sheet
+- Retry invalid input until input as expected
+
+while True:
+    try:
+        # some code block
+    except:
+        # execute exception information, or an alternative fixing code
+        continue
+    break
