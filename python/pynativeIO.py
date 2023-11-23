@@ -1,6 +1,6 @@
 # Python Input and Output Exercise
 # https://pynative.com/python-input-and-output-exercise/
-
+''' Comment block (skip prev. questions)
 # Exercise 1: Accept numbers from a user
 # Write a program to accept two numbers from the user and calculate multiplication
 print("1. Answer:")
@@ -53,3 +53,30 @@ while True:
         print("This is invalid input. Please input either integer or float: \"14.513\" or \"15\"")
         continue
     break
+'''
+# Exercise 5: Accept a list of 5 float numbers as an input from the user
+print("5. Answer:")
+
+def castFloat():
+    while True:
+        try:
+            _n = int(input("Enter number of elements: "))
+        except ValueError:
+            print("Please input a number without symbol or space")
+            continue
+        break
+
+    _list = []
+    for i in range(0, _n):
+        while True:
+            try:
+                _element = float(input("Input a number (\".\" is allowed): "))
+                _list.append("{:.1f}".format(_element))
+                print("input no.",i+1," : ",_element, sep='')
+            except ValueError:
+               print("Please input either int or float")
+               continue
+            break
+    print(_list)
+
+castFloat()
