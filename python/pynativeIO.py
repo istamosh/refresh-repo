@@ -53,7 +53,7 @@ while True:
         print("This is invalid input. Please input either integer or float: \"14.513\" or \"15\"")
         continue
     break
-'''
+
 # Exercise 5: Accept a list of 5 float numbers as an input from the user
 print("5. Answer:")
 
@@ -80,3 +80,28 @@ def castFloat():
     print(_list)
 
 castFloat()
+'''
+# Exercise 6: Write all content of a given file into a new file by skipping line number 5
+# located in .\pynative\res\io\test.txt
+print("6. Answer:")
+
+def deleteLine5(path, fileName):
+    from pathlib import Path
+    _fileLoc = Path(__file__).parent / path
+    _newFilePath = str(_fileLoc).rsplit('\\',1)[0] + "\\" + fileName + ".txt"
+
+    with open(_fileLoc, 'r') as file:
+        _list = file.readlines()
+
+    _contents = [i for i in _list if i != _list[4]]
+    
+    import os.path as osp
+    if osp.exists(_newFilePath):
+        print('Operation cancelled, file already exists!')
+    else:
+        with open(_newFilePath, 'w') as file:
+            file.writelines(_contents)
+            file.close()
+        print('Exercise 6: File created as ',fileName,'.txt!', sep='')
+
+deleteLine5(r'./pyNative/res/io/test.txt', input("Enter file name: "))

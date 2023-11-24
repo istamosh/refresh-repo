@@ -44,3 +44,49 @@ while True:
         # execute exception information, or an alternative fixing code
         continue
     break
+
+List Comprehension Cheat Sheet
+- items = ['ration','antibiotic','phone']
+- Add "items" elements into "content":
+
+content = []
+for i in items:
+    content.append(i)
+
+is the same as:
+
+content = [i for i in items]
+
+- Add "items" elements' char. length into "content":
+
+content = []
+for i in items:
+    content.append(len(i))
+
+is the same as:
+
+content = [len(i) for i in items]
+
+- Include "items" elements' as 'Nice' string if char. length is 5 into "content", otherwise fill '-':
+
+content = []
+for i in items:
+    if len(i) == 5:
+        content.append("Nice")
+    else:
+        content.append("-")
+
+is the same as:
+
+content = ["Nice" if len(i)==5 else "-" for i in items]
+
+- Add "items" elements into "content" without first element:
+
+content = []
+for i in items:
+    if i != items[0]:
+        content.append(i)
+
+is the same as:
+
+content = [i for i in items if i != items[0]]
