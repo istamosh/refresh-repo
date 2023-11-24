@@ -90,3 +90,15 @@ for i in items:
 is the same as:
 
 content = [i for i in items if i != items[0]]
+
+- Add prefix for every "items" elements, and insert them into "content":
+- upgrades = ['pristine-', 'broken-']
+
+content = []
+for i in items:
+    for prefix in upgrades:
+        content.append(prefix+i)
+
+is the same as:
+
+content = [prefix+i for i in items for prefix in upgrades]
