@@ -105,7 +105,7 @@ def deleteLine5(path, fileName):
         print('Exercise 6: File created as ',fileName,'.txt!', sep='')
 
 deleteLine5(r'./pyNative/res/io/test.txt', input("Enter file name: "))
-'''
+
 # Exercise 7: Accept any three string from one input() call
 # Write a program to take three names as input from a user in the single input() function call.
 print("7. Answer:")
@@ -120,3 +120,13 @@ while True:
         print("Invalid input, please input 3 names separated by space.")
         continue
     break
+'''
+# Exercise 8: Format variables using a string.format() method.
+# Write a program to use string.format() method to format the following three variables as per the expected output
+print("8. Answer:")
+
+def answer8(money, qty, price):
+    _txt = "I have {_money:,} dollar(s) so I can buy {_qty:n} football(s) for {_price:.2f} dollar(s)."
+    print(_txt.format(_money = money, _qty = qty, _price = price))
+
+answer8(1000, 3, 450)
