@@ -80,7 +80,7 @@ def castFloat():
     print(_list)
 
 castFloat()
-'''
+
 # Exercise 6: Write all content of a given file into a new file by skipping line number 5
 # located in .\pynative\res\io\test.txt
 print("6. Answer:")
@@ -105,3 +105,18 @@ def deleteLine5(path, fileName):
         print('Exercise 6: File created as ',fileName,'.txt!', sep='')
 
 deleteLine5(r'./pyNative/res/io/test.txt', input("Enter file name: "))
+'''
+# Exercise 7: Accept any three string from one input() call
+# Write a program to take three names as input from a user in the single input() function call.
+print("7. Answer:")
+
+while True:
+    try:
+        a, b, c = input("Enter three names (separated by space): ").split()
+        print("Name1:", a)
+        print("Name2:", b)
+        print("Name3:", c)
+    except:
+        print("Invalid input, please input 3 names separated by space.")
+        continue
+    break
