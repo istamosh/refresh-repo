@@ -1,6 +1,8 @@
 # Python Input and Output Exercise
 # https://pynative.com/python-input-and-output-exercise/
-''' Comment block (skip prev. phase)
+
+#''' Comment block (skip prev. exercise)
+
 # Exercise 1: Accept numbers from a user
 # Write a program to accept two numbers from the user and calculate multiplication
 print("1. Answer:")
@@ -130,7 +132,7 @@ def answer8(money, qty, price):
     print(_txt.format(_money = money, _qty = qty, _price = price))
 
 answer8(1000, 3, 450)
-'''
+
 # Exercise 9: Check file is empty or not
 # Write a program to check if the given file is empty or not
 print("9. Answer:")
@@ -151,5 +153,35 @@ while True:
         getSize(_dir, input("Enter file name for check: "))
     except:
         print("File not found, make sure type the name correctly.")
+        continue
+    break
+
+#'''
+
+# Exercise 10: Read line number 4 from the following file
+print("10. Answer:")
+
+def readLine4(path, fileName):
+    from pathlib import Path
+    _path = str(Path(__file__).parent / path) + "\\" + fileName
+    _list = []
+
+    with open(_path, 'r') as file:
+        _list = file.readlines()
+        file.close()
+    
+    if len(_list) >= 4:
+        print(">>>",_list[3].strip())
+    else:
+        raise IndexError
+
+while True:
+    try:
+        readLine4('./pyNative/res/io/', input("Enter file name: "))
+    except FileNotFoundError:
+        print("File not found, please try again.")
+        continue
+    except IndexError:
+        print("File contains not enough line to read.")
         continue
     break

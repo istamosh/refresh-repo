@@ -34,8 +34,8 @@ String slice:
 - someString[2:] = remove the first two chars
 - someString[:-1] = remove the last one char
 
-Code Block Cheat Sheet
-- Retry invalid input until input as expected
+# Code Block
+- Retry invalid input until input is correct and as intended
 
 while True:
     try:
@@ -45,7 +45,23 @@ while True:
         continue
     break
 
-List Comprehension Cheat Sheet
+- Get full directory path from relative path
+
+relativePath = ""
+from pathlib import Path
+_path = str(Path(__file__).parent / relativePath)
+
+- Multiple variables in one input separated by space
+
+var1, var2, var3 = input("enter 3 vars:").split()
+
+- Get file size in bytes
+
+fullDirPath = ""
+import os
+print(os.stat(fullDirPath).st_size)
+
+# List Comprehension Cheat Sheet
 - items = ['ration','antibiotic','phone']
 - Add "items" elements into "content":
 
@@ -103,7 +119,7 @@ is the same as:
 
 content = [prefix+i for i in items for prefix in upgrades]
 
-String format() method cheatsheet:
+# String format() method cheatsheet:
 - _string = "I have {fund:.2f} dollar(s) saving."
 - print(_string.format(fund = 100))
 Result is: "I have 100.00 dollar(s) saving."
