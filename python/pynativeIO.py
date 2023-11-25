@@ -1,6 +1,6 @@
 # Python Input and Output Exercise
 # https://pynative.com/python-input-and-output-exercise/
-''' Comment block (skip prev. questions)
+''' Comment block (skip prev. phase)
 # Exercise 1: Accept numbers from a user
 # Write a program to accept two numbers from the user and calculate multiplication
 print("1. Answer:")
@@ -120,7 +120,7 @@ while True:
         print("Invalid input, please input 3 names separated by space.")
         continue
     break
-'''
+
 # Exercise 8: Format variables using a string.format() method.
 # Write a program to use string.format() method to format the following three variables as per the expected output
 print("8. Answer:")
@@ -130,3 +130,23 @@ def answer8(money, qty, price):
     print(_txt.format(_money = money, _qty = qty, _price = price))
 
 answer8(1000, 3, 450)
+'''
+# Exercise 9: Check file is empty or not
+# Write a program to check if the given file is empty or not
+print("9. Answer:")
+
+def getSize(filePath, fileName):
+    from pathlib import Path
+    _fullPath = str(Path(__file__).parent / filePath) + "\\" + fileName
+    import os
+    print(fileName, " size is: ", os.stat(_fullPath).st_size, " bytes.", sep='')
+
+while True:
+    try:
+        _dir = "./pyNative/res/io/"
+        print('Current dir:',_dir)
+        getSize(_dir, input("Enter file name for check: "))
+    except:
+        print("File not found, make sure type the name correctly.")
+        continue
+    break
