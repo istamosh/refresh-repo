@@ -139,7 +139,10 @@ def getSize(filePath, fileName):
     from pathlib import Path
     _fullPath = str(Path(__file__).parent / filePath) + "\\" + fileName
     import os
-    print(fileName, " size is: ", os.stat(_fullPath).st_size, " bytes.", sep='')
+    if os.stat(_fullPath).st_size != 0:
+        print(fileName, " file size is: ", os.stat(_fullPath).st_size, " bytes.", sep='')
+    else:
+        print(fileName, " is an empty file.", sep='')
 
 while True:
     try:
