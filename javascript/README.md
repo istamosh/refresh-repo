@@ -73,6 +73,7 @@ Code:
 - myArray.push([afterEnd]) = append new element on the end of myArray
 - myArray.pop() = return the last element (optional) and remove it from myArray
 - myArray.shift() = return the first element (optional) and remove it from myArray
+- myArray.unshift([willBeFirst]) = append new element on the beginning of myArray
 
 # Using unsigned variable (code block):
 

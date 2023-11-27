@@ -87,3 +87,47 @@ var identities = ["John", "Doe", "United States"];
 getFirstEle = identities.shift();
 console.log(identities)
 console.log(getFirstEle)
+// append first element
+identities.unshift("Thomas"); identities
+
+// function revisited
+function saySomething(){
+    console.log("Hey, good to see you again!")
+}
+saySomething();
+saySomething();
+
+// func. with arguments
+function divisionOperation(leftHand, rightHand){
+    console.log(leftHand - rightHand)
+}
+// now invoke above func. with parameters
+divisionOperation(12, 3);
+divisionOperation(19, 50);
+
+// global vs local scope
+var globalInt = 5;
+function localScope(){
+    localInt = 10;
+}
+// write a function to check whether the variable is declared global or local
+function checkScope(){
+    var _result = "";
+    if (typeof globalInt != "undefined"){
+        _result += "globalInt: " + globalInt;
+    }
+    if (typeof localInt != "undefined"){
+        _result += ", localInt: " + localInt;
+    }
+    console.log(_result);
+}
+localScope(); // this will bring local var to global
+checkScope();
+
+// console on global tries to access local var without invoking function
+function localScope2(){
+    var localString = "This is local.";
+    console.log(localString);
+}
+localScope2();
+console.log(localString);
