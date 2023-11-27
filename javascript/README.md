@@ -1,4 +1,5 @@
 # JS Readme
+# Read this in editor or notepad++
 
 Tools used:
 - VSCode
@@ -23,7 +24,14 @@ Code:
 - var string = 'double quote sign (")' : alternative escape quote sign using single quote (') as starting and closing
 - var string = `double quote (") and single quote sign (')` : another alternative using backticks (`) to freely using single quote and double quote without escaping literal sign (\)
 
-Operator:
+# Primitive (immutable) vs Reference (mutable) Data Type:
+- Immutable : String, Integer, Undefined, Boolean, BigInt
+- Mutable : Function, Array, Object
+-- Function declared as "function(args)"
+-- Array declared as "[element1, element2]"
+-- Object declared as "{fname: 'John', lname: 'Doe'}"
+
+# Operator:
 - + = addition
 - - = subtraction
 - * = multiplication
@@ -37,18 +45,47 @@ Operator:
 - /= = augmented division
 - %= = augmented modulo
 
-Declaration:
+# Escape Sequences in string:
+- \' = single quote
+- \" = double quote
+- \\ = backslash
+- \n = newline
+- \r = carriage return
+- \t = tab
+- \b = backspace
+- \f = form feed
+
+# Declaration:
 - var = variable
 - var a; = unsigned variable (empty declaration)
 - var b = 2; signed variable (filled by 2)
 - let = block-scoped variable
 - const = constant, value cannot be changed
 
+# Property:
+- myString.length = get a number of chars in myString. (incl. spaces)
+- myString[1] = get second letter in myString by using bracket notation (list index begins at 0)
+- myNestedArray[2][5] = get value inside index 2 and subindex 5 (and so on depends on the depth of array)
+- myString[myString.length - 1] = get last letter regardless of string length
+- myString[myString.length - 3] = get the third to last letter
+
+# Methods:
+- myArray.push([afterEnd]) = append new element on the end of myArray
+- myArray.pop() = return the last element (optional) and remove it from myArray
+
 # Using unsigned variable (code block):
 
 var a;
 a = 7;
 
+# Code Blocks
+- Functions
+myFunction(param, param){
+    // operations here
+}
+myFunction(var, var)
+
 # More Description:
 - Value declaration is case sensitive, 'var JavaScript' can't be read with 'console.log(javascript)'
 - Camel case is a case naming style with first letter being lowercase then after that use uppercase, e.g. = properCamelCase, javaScript, java
+- the use of number in the beginning of variable naming on javascript is prohibited
