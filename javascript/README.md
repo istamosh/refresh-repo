@@ -94,6 +94,7 @@ myFunction(param, param){
 myFunction(var, var)
 
 # More Description:
-- Value declaration is case sensitive, 'var JavaScript' can't be read with 'console.log(javascript)'
+- Variable naming declaration is case sensitive, 'var JavaScript' can't be read with 'console.log(javascript)'
 - Camel case is a case naming style with first letter being lowercase then after that use uppercase, e.g. = properCamelCase, javaScript, java
 - the use of number in the beginning of variable naming on javascript is prohibited
+- Hoisting is a function call BEFORE the function itself is being defined (function is placed below the caller, not from the top, like usual top to bottom coding flow), Regular function can be hoisted while Arrow function cannot.
