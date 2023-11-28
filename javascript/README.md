@@ -45,6 +45,11 @@ Code:
 - /= = augmented division
 - %= = augmented modulo
 
+# IF comparator:
+- == = equal
+- === = strict equal (int 3 and string '3' is NOT equal)
+
+
 # Escape Sequences in string:
 - \' = single quote
 - \" = double quote
@@ -74,6 +79,7 @@ Code:
 - myArray.pop() = return the last element (optional) and remove it from myArray
 - myArray.shift() = return the first element (optional) and remove it from myArray
 - myArray.unshift([willBeFirst]) = append new element on the beginning of myArray
+- console.log(JSON.stringify(myArray)) = display array elements in JSON string variant (['1','2','3'] to [1,2,3])
 
 # Using unsigned variable (code block):
 

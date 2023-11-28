@@ -130,4 +130,71 @@ function localScope2(){
     console.log(localString);
 }
 localScope2();
-console.log(localString);
+//console.log(localString);
+
+// access value outside function if local isn't exist
+var outerWear = "T-Shirt";
+function myOutfit(){
+    var outerWear = "Sweater";
+    return outerWear;
+}
+console.log(myOutfit());
+console.log(outerWear);
+
+// return a value using function
+function divideTwo(num){
+    return num / 2;
+}
+console.log(divideTwo(50));
+
+// using a function without returning value will result in undefined
+var someNumber = 10;
+function addByTen(){
+    someNumber += 10;
+}
+console.log(addByTen())
+
+// this function will return a value and change the global var
+var remain = 0; remain
+function moduloNine(num){
+    return num % 9
+}
+remain = moduloNine(98); remain
+
+// this function will queue next item and remove the first queue
+function nextInLine(arr, item){
+    arr.push(item);
+    return arr.shift();
+}
+var someArray = [1,2,3,4,5];
+console.log("Before: "+ JSON.stringify(someArray));
+console.log(nextInLine(someArray, 6));
+console.log("After: " + JSON.stringify(someArray));
+
+// using boolean return in function
+function booleanOps(isItTrue){
+    if (isItTrue){
+        return "yes it was true"
+    }
+    return "no it was false"
+}
+console.log(booleanOps(true));
+
+// using if and boolean equal comparator
+function checkBlackJack(val){
+    if (val == 21)
+        return "Black Jack!"
+    else
+        return "Nope!"
+}
+console.log(checkBlackJack('21'));
+
+// strict equal comparator
+function checkStrictVal(val){
+    if (val === 10)
+        return "Equal"
+    else
+        return "Not Equal"
+}
+console.log(checkStrictVal('10'))
+
