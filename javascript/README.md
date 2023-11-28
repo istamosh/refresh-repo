@@ -64,7 +64,7 @@ Code:
 - var = variable
 - var a; = unsigned variable (empty declaration)
 - var b = 2; signed variable (filled by 2)
-- let = block-scoped variable
+- let = block-scoped variable, arrow function use this declaration
 - const = constant, value cannot be changed
 
 # Property:
