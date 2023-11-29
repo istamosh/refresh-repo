@@ -198,3 +198,10 @@ function checkStrictVal(val){
 }
 console.log(checkStrictVal('10'))
 
+// compare two values with double and triple equals using arrow func.
+let compareEqual = (a, b) => {
+    if (a == b && a === b) return "Two values are strictly equal."
+    else if (a == b) return "Two values are equal"
+    else return "Two values are not equal"
+}
+console.log(compareEqual(11, "11"));
