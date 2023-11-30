@@ -19,6 +19,8 @@ Cheat Sheet
 - if = declare if statement
 - elif = else if, another if after first if
 - else = last resort prior any ifs are false
+- len([1, 2, 3, 6]) = return number of elements
+- myList[index] = return the value of element index inside myList
 
 Variable Declaration
 - Immutable = str, int, float, bool, bytes, tuple...
