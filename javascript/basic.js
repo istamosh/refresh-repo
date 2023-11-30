@@ -205,3 +205,97 @@ let compareEqual = (a, b) => {
     else return "Two values are not equal"
 }
 console.log(compareEqual(11, "11"));
+
+// using switch statement
+const switchState = val => {
+    switch(val){
+        case 1:
+            answer = "Alpha"
+            break;
+        case 2:
+            answer = "Bravo"
+            break;
+        case 3:
+            answer = "Charlie"
+            break;
+        default:
+            answer = "Unidentified callsign"
+    }
+    return answer
+}
+console.log(switchState(2))
+
+// sequential switch
+const checkGrade = val => {
+    switch(val){
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low Grade"
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "Mid Grade"
+            break;
+        case 7:
+        case 8:
+        case 9:
+            answer = "High Grade"
+            break;
+        case 10: answer = "Perfect Grade"; break
+        case "cheat": answer = "Retry exam"; break
+        default: answer = "Unsubmitted Grade"
+    }
+    return answer
+}
+console.log(checkGrade("cheat"))
+
+const isLeftLessThanRight = (a, b) => a < b
+console.log(isLeftLessThanRight(10, 15))
+
+// Blackjack
+const cardValue = face => {
+    switch (face){
+        case 2: value = 2; break    
+        case 3: value = 3; break
+        case 4: value = 4; break
+        case 5: value = 5; break
+        case 6: value = 6; break
+        case 7: value = 7; break
+        case 8: value = 8; break
+        case 9: value = 9; break
+        case 10:
+        case 'J':
+        case 'Q':
+        case 'K': value = 10; break
+        case 'A': value = 11; break
+        default: value = 0;
+    }
+    return value
+}
+const blackJack2 = (cardA, cardB) => {
+    val = cardValue(cardA) + cardValue(cardB)
+    switch (val){
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11: return "You need to hit"
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20: return "Might stand"
+        case 21: return "Black Jack!"
+        default: return "Invalid"
+    }
+}
+console.log(blackJack2("K", "J"))

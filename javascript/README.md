@@ -45,9 +45,26 @@ Code:
 - /= = augmented division
 - %= = augmented modulo
 
-# IF comparator:
+# If statement:
+-- Serial if statements
+- if = the firstmost if declaration (can jump directly to else for handling two outcomes (if then else); else if and else are optional depends on use case)
+- else if = the alternate statement if above ifs is not satisfied (can be continued by another else if below)
+- else = the last statement if above ifs are not satisfied
+-- Parallel if statements can be used for multiple uses
+- if
+- if
+# Variable comparator/statement:
 - == = equal
+= != = is not equal
+= > = greater than
+= < = lesser than
+- >= = equal or greater than
+- <= = equal or lesser than
 - === = strict equal (int 3 and string '3' is NOT equal)
+- !== = strict non-equal
+# Compare two statements (Logical Operator):
+- && = AND operator, two ampersand sign (requires both to be true for continuing)
+- || = OR operator, two pipes sign (requires either one to be true)
 
 
 # Escape Sequences in string:
@@ -93,8 +110,28 @@ myFunction(param, param){
 }
 myFunction(var, var)
 
+- Switch Statement
+switch(params){
+    case 1:
+        // op
+        break;
+    case 2:
+        // op
+        break;
+    case 3:
+        // op
+        break;
+    default:
+        // op
+    // return something (optional)
+}
+    
+
 # More Description:
 - Variable naming declaration is case sensitive, 'var JavaScript' can't be read with 'console.log(javascript)'
 - Camel case is a case naming style with first letter being lowercase then after that use uppercase, e.g. = properCamelCase, javaScript, java
 - the use of number in the beginning of variable naming on javascript is prohibited
+- When using 'if' statement with 'else if' and 'else', consider the logical order, the order as follows: if -> else if -> else. If the condition are met (returns true), then the rest codeblocks are skipped.
+- 'if' statement and 'else if' statement uses condition, while 'else' does not.
+- 'switch' statement is just like 'if' but the cases (case) and parameter matching are using strict equal (===), then the 'default' keyword is just like final 'else'.
 - Hoisting is a function call BEFORE the function itself is being defined (function is placed below the caller, not from the top, like usual top to bottom coding flow), Regular function can be hoisted while Arrow function cannot.
