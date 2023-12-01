@@ -43,6 +43,8 @@ Check all remote branches
 4. git checkout <branch>
 5. git status
 6. git pull origin <branch> = pull any changes done on remote and sync. into local 
+7. git checkout -b <localbranch> <remotename/remotebranch> = create local branch in sync with existing remote branch
+8. git pull
 
 Git Cheat Sheet
 - git clone https://github.com/istamosh/refresh-repo.git  = clone git repo into local repo (on current folder)
