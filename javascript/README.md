@@ -130,7 +130,9 @@ switch(params){
         // op
     // return something (optional)
 }
-    
+
+- Swapping two elements ([A, B, ...] to [B, A, ...]) inside list (introduced ES6)
+[myArr[0], myArr[1]] = [myArr[1], myArr[0]];
 
 # More Description:
 - Variable naming declaration is case sensitive, 'var JavaScript' can't be read with 'console.log(javascript)'

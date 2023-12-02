@@ -36,7 +36,7 @@ function findLargest(list){
 function bubbleSort(list){
     // Polynomial Time, O(n^2)
     sample = list
-    for (let i = 0; i < sample.length; i++){
+    for (let i = 0; i < sample.length - 1; i++){
         for (let j = 0; j < sample.length - i - 1; j++){
             if (sample[j] > sample[j+1]){
                 [sample[j], sample[j+1]] = [sample[j+1], sample[j]]
