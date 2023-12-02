@@ -4,12 +4,17 @@
 Tools used:
 - VSCode
 - Live Server Extension = Live HTML code run on save, on browser 
-- Quokka.js Extension = Live JS code run as you type
+- Quokka.js Extension = Live JS code run as you type (not working with import)
+- Node.js
 - Browser
 
 VSCode shortcut:
 - ALT+L, ALT+O = Run file with live server on default browser (on HTML requires head or body)
 - CTRL+K, Q = Start/Restart Quokka on current file, view in Output tab
+
+Node shortcut:
+- node = welcome screen, exit with '.exit'
+- node <file.js> = run file.js
 
 Browser Shortcut:
 - F12 = Open Inspect Element
