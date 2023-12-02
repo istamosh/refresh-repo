@@ -3,6 +3,7 @@ let unsortedList = [2, 51, 12, 34, 76, 60, 101, 83, 95, 49, 88, 27];
 
 binarySearch(sortedList, 95)
 let largest = findLargest(unsortedList); largest
+bubbleSort(unsortedList); unsortedList
 
 function binarySearch(list, query) {
     // Logarithmic Time, O(log n)
@@ -30,6 +31,19 @@ function findLargest(list){
         if (list[i] > sample) sample = list[i]
     }
     return sample
+}
+
+function bubbleSort(list){
+    // Polynomial Time, O(n^2)
+    sample = list
+    for (let i = 0; i < sample.length; i++){
+        for (let j = 0; j < sample.length - i - 1; j++){
+            if (sample[j] > sample[j+1]){
+                [sample[j], sample[j+1]] = [sample[j+1], sample[j]]
+            }
+        }
+    }
+    return sample;
 }
 
 function shuffleArray(array) {
