@@ -110,6 +110,14 @@ Merging
 4. git branch -d <branchname> = delete local branch after merge (optional)
 5. git push origin -d <branchname> = delete remote branch after merge (optional)
 
+Creating new repository
+1. cd <localdir>
+2. git init
+3. git remote add origin <http/ssh addr.>
+4. git add .
+5. git commit -m <message>
+6. git push -u origin <master/main branchname>
+
 Stashing changes and switching
 1. git add <files>
 2. git stash save
@@ -161,6 +169,7 @@ Using --amend to revise a latest commit (works only on local)
 
 Another Explanation
 - Checkout act will bring all uncommited changes into active branch.
+- You can work on other repo by initiating a git on other directory away from already initiated git local repo (checked using git branch -a -vv)
 - PR (Pull request) is an act to merge feature branch into parent or base branch, with other still working on that parent branch, with their consent to accept/reject, compare, review, or even comment on your request. After accepting, merge can be done and your feature branch will be no longer needed.
 - Conflicts occur when there are both file changes in two separate branch that are ready to be merged together, resolve manually by navigating into conflicted file one by one marked by <<<, ===, and >>>. and then re-commit again.
 - To minimize branch conflicts and navigating easier, use graph feature provided by Git.
