@@ -51,9 +51,9 @@ Git Cheat Sheet
 - git clone <http/ssh address>                            = clone remote repo into your current directory (local)
 - git clone <http/ssh address> <dirname>                  = clone remote repo into ./dirname folder
 - git add .                                               = add all untracked(U) and modified(M) changes into staging area (queue before commit)
-- git add app.py                                          = add app.py to staging area
+- git add <file>                                          = add a file to staging area
 - git reset                                               = unstage any file from staging area
-- git reset app.py                                        = unstage app.py from staging area
+- git reset <file>                                        = unstage a file from staging area
 - git reset --hard <commithash>                           = hard reset and unstage any changes back to last commit checkpoint
 - git status                                              = check the git status
 - git commit -m "title desc."                             = commit staging area with the title message
@@ -61,9 +61,11 @@ Git Cheat Sheet
 - git commit -am "<message>"                              = "git add ." + "git commit -m" shortcut (doesn't work if there are any file with A and U tag on Visual Studio)
 - git commit --amend -m "<commit msg>"                    = Edit the typo of latest commit message
 - git commit --amend --no-edit                            = Update the latest commit to include unstaged files that were left behind with no changes of commit message
-- git push origin master                                  = pushes changes/commit from local repo into "master" branch using origin link from the start
+- git push origin master                                  = pushes changes/commit from local "master" branch into remote "master" branch using original remote repo address from the start
+- git push origin <branch>                                = if remote branch is not existed yet, push local branch into newly created remote <branch> name
 - git push origin --delete <branchname>                   = delete a remote branch
 - git push origin <branch> --force                        = this will overwrite all states in remote to be synced with yours, use this ONLY if there are no other remote push other than yours
+- git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
 - git init                                                = initialize a git repo on local directory if it isn't already there
 - git remote add origin <https/ssh address>               = add origin address for fetching or pushing
 - git remote -v                                           = view remote address
@@ -81,7 +83,6 @@ Git Cheat Sheet
 - git checkout main                                       = switch active branch to "main" branch
 - git checkout -- <filename>                              = undo any modified uncommited changes of a file (remove M flag)
 - git diff <branch name>                                  = compare difference changes between current branch and branch name (quit diff by pressing q (like vim editor))
-- git push -u origin <branch name>                        = push local branch into remote branch by upstream (if the remote branch didn't have the corresponding branch already) (-u is the same as --set-upstream)
 - git pull                                                = pull any changes done in remote into local branch if there are any
 - git pull origin <branch>                                = same as above but with specific remote address and branch name
 - git merge main                                          = if you are in branch other than main branch, this will merge both branch INTO main
@@ -118,11 +119,18 @@ Creating new repository
 5. git commit -m <message>
 6. git push -u origin <master/main branchname>
 
+Creating new local branch in sync with remote
+1. git checkout -b <branchname> = create new local branch
+2. (do and commit something.)
+3. git push -u origin <branchname> = push local into newly created remote branch and set upstream
+
 Stashing changes and switching
-1. git add <files>
-2. git stash save
-3. git checkout <branch>
-4. git stash pop = if you want to pop out saved stash
+1. git add <files> = add files for stashing
+2. git stash save "<stashname>" = save with stash name
+3. git checkout <branch> = swap to target branch (if wanted to just checking files or bring changes here)
+4. git stash list = view a list of stashed saves (index started from 0)
+5. git stash apply <index> = apply saved stash by index number
+5a. git stash pop = if you want to pop out saved stash (not recommended for multiple stash saves)
 
 Git Log Navigation
 - q = Quit log viewing
@@ -179,6 +187,6 @@ Another Explanation
 - Rebase is an act to re-anchor a feature branch against the master branch IF the master have new commit (ahead of feature branch) on the remote while you working on feature, ofcourse after you do pull check on master. This can be done by checkout on feature then "git rebase master", a test will performed (if there are no conflict) and a new anchor is placed on that recent master commit (feature branch will move forward to last master commit), then you checkout back to master then do "git rebase feature-branch" to merge any commits on feature branch into master (any number of commits on feature will be applied to master, thus rewriting master's history).
 - Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
 - git fetch is different from git pull because fetch copies any changes done in remote repo into new local branch named origin/<branch>.
-- git stash is used for save changes for uncommited works; is useful for making incomplete changes on current branch then don't want to bring those changes prior to switching branch.
+- Stashing (git stash) is used for "wrap" added files (git add .) yet uncommited changes away prior to switching branch. Useful for checking another branch without bringing file changes from current branch.
 - git revert is the easiest and safest way to undo a commit, this way creates a new commit that undoes the desired previous commit (A(created file1), B(edited file1), C(created file2), D(revert "edited file1")), thus making it stay in commit history (helps for tracking mistakes)
 - git reset is used for deleting commits and getting back to desired commit pointer, e.g A-B-C-D (latest is D), git reset C will result in A-B-C, while still maintaining local saved files in place and unstage them. To remove local changes too, use --hard parameter, this will effectively going back in time and loses latest tracks permanently, so proceed with caution.
