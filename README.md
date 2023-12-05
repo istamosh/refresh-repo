@@ -130,7 +130,7 @@ Stashing changes and switching
 3. git checkout <branch> = swap to target branch (if wanted to just checking files or bring changes here)
 4. git stash list = view a list of stashed saves (index started from 0)
 5. git stash apply <index> = apply saved stash by index number
-5a. git stash pop = if you want to pop out saved stash (not recommended for multiple stash saves)
+6. git stash drop <index> = drop (delete) saved stash by index number
 
 Git Log Navigation
 - q = Quit log viewing
@@ -187,6 +187,6 @@ Another Explanation
 - Rebase is an act to re-anchor a feature branch against the master branch IF the master have new commit (ahead of feature branch) on the remote while you working on feature, ofcourse after you do pull check on master. This can be done by checkout on feature then "git rebase master", a test will performed (if there are no conflict) and a new anchor is placed on that recent master commit (feature branch will move forward to last master commit), then you checkout back to master then do "git rebase feature-branch" to merge any commits on feature branch into master (any number of commits on feature will be applied to master, thus rewriting master's history).
 - Fast-forward merge will integrate checkouts branch's (B) commits history into the selected branch (A), making A have NO branching history of (B).
 - git fetch is different from git pull because fetch copies any changes done in remote repo into new local branch named origin/<branch>.
-- Stashing (git stash) is used for "wrap" added files (git add .) yet uncommited changes away prior to switching branch. Useful for checking another branch without bringing file changes from current branch.
+- Stashing (git stash) is used for "wrap" added files (git add .) yet uncommited changes away prior to switching branch. Useful for checking another branch without bringing file changes from current branch. Stash is considered local branch.
 - git revert is the easiest and safest way to undo a commit, this way creates a new commit that undoes the desired previous commit (A(created file1), B(edited file1), C(created file2), D(revert "edited file1")), thus making it stay in commit history (helps for tracking mistakes)
 - git reset is used for deleting commits and getting back to desired commit pointer, e.g A-B-C-D (latest is D), git reset C will result in A-B-C, while still maintaining local saved files in place and unstage them. To remove local changes too, use --hard parameter, this will effectively going back in time and loses latest tracks permanently, so proceed with caution.
