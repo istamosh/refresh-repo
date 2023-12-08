@@ -8,8 +8,4 @@ PHP Download:
 
 Extensions:
 - PHP Intelephense
-- PHP Server (Right click on file choose "PHP Server: Serve project" for debug)
-- Live Server
-
-Browser extensions:
-- Live Server
+- PHP Server (Right click on file choose "PHP Server: Serve project" for debug, refresh on browser to see changes)
