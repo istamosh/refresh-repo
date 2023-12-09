@@ -13,10 +13,14 @@
         echo "<hr>";
         echo "<p>First paragraph comes here.</p><br>";
 
-        echo "There once was a man named John <br>";
-        echo "He was 35 years old <br>";
-        echo "He really liked the name John <br>";
-        echo "But didn't like being 35 years old. <br>";
+        // declaring a variables
+        $characterName = "John Doe";
+        $characterAge = 27;
+        
+        echo "There once was a man named $characterName <br>";
+        echo "He was $characterAge years old <br>";
+        echo "He really liked the name $characterName <br>";
+        echo "But didn't like being $characterAge years old. <br>";
     ?>
 </body>
 </html>
