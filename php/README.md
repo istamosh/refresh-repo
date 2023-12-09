@@ -21,3 +21,9 @@ How to setup Live Server with PHP Server:
 - Apply
 - Check changes by using full address (like http://localhost:3000/var/www/index.php), then change your index.php code, save it, see if your browser auto-reload that triggers every time file is saved.
 - Example: say if you want to check other codes inside "demo" folder with the name of "somethingGood.php", then change the Live address to "http://localhost:3000/var/www/demo/somethingGood.php".
+- Once this instruction is worked, you just need to start the Live Server then PHP Server.
+
+Syntaxes:
+- <?php ... ?> : insert php section under HTML boilerplate, all php code goes inside "..."
+- $myName = "John Doe"; : declare a dynamic variable (using dollar sign)
+- echo "html codes"; : invoke an html codes inside double ticks and display them in a page
