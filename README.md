@@ -96,7 +96,7 @@ Git Cheat Sheet
 - git config --global user.email                          = view global settings of email address used for commits
 - git config --global user.email "<email>"                = set global email address for commits
 - git config --global user.name "<name>"                  = set global name for commits
-- git config --global alias.ac "commit -am"               = set alias for automatic add and commit, followed by "git ac <commit message>"
+- git config --global alias.ac "commit -am"               = set global configuration alias for automatic adding files and local commits ("-am" flag), then you can use your custom alias by using command "git ac <commit message>". Using alias makes you work more faster (QoL). More alias explanation on [here](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases).
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 - git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
 - git stash save <savename>                               = stash any changes after git add before working on other branch
@@ -190,3 +190,4 @@ Another Explanation
 - Stashing (git stash) is used for "wrap" added files (git add .) yet uncommited changes away prior to switching branch. Useful for checking another branch without bringing file changes from current branch. Stash is considered local branch.
 - git revert is the easiest and safest way to undo a commit, this way creates a new commit that undoes the desired previous commit (A(created file1), B(edited file1), C(created file2), D(revert "edited file1")), thus making it stay in commit history (helps for tracking mistakes)
 - git reset is used for deleting commits and getting back to desired commit pointer, e.g A-B-C-D (latest is D), git reset C will result in A-B-C, while still maintaining local saved files in place and unstage them. To remove local changes too, use --hard parameter, this will effectively going back in time and loses latest tracks permanently, so proceed with caution.
+- Before commiting, notice the colored vertical lines on the left besides Line Number in Visual Studio Code, anything added from nothing will be denoted with green lines, while anything changed denoted with blue lines (including deletion, modification, and revision), you can click on that lines to reveal which is changed and the differences from past commits, this helps keeping the track of what you have done for the commit messages later (besides file flags like U, M, A, etc.). This feature is called "Git Local Working Changes".
