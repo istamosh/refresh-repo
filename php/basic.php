@@ -31,6 +31,38 @@
         $myBool = false;
         $myGpa = 3.25;
         $myString = "hehe";
+
+        // display value directly from a variable
+        echo "<br>";
+        echo $myGpa; echo "<br>";
+
+        // display string in lower and uppercase function
+        echo "<br>";
+        $mixedCase = "hEhEeHeeHEh";
+        echo $mixedCase; echo "<br>";
+        echo "uppercased: ",strtoupper($mixedCase); echo "<br>";
+        echo "lowercased: ",strtolower($mixedCase); echo "<br>";
+        echo strtolower("This Is A Word"); echo "<br>";
+        
+        // display the char. length of a string variable
+        echo "length: ",strlen($mixedCase); echo "<br>";
+
+        // get character index in variable
+        $i = 1;
+        echo "char. index ",$i," is: ",$mixedCase[$i]; echo "<br>";
+    
+        // change first letter to B
+        $mixedCase[0] = "B";
+        echo $mixedCase; echo "<br>"; echo "<br>";
+
+        // find and replace certain characters function
+        $univName = "Universitas Indonesia";
+        echo str_replace("Universitas", "University of", $univName); echo "<br>"; echo "<br>";
+    
+        // using substring function, 12 is the starting point index
+        echo substr($univName, 12); echo "<br>";
+        // grab 4 characters length, starting from index 12
+        echo substr($univName, 12, 4); echo "<br>"; echo "<br>";
     ?>
 </body>
 </html>

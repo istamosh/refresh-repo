@@ -27,3 +27,12 @@ Syntaxes:
 - <?php ... ?> : insert php section under HTML boilerplate, all php code goes inside "..."
 - $myName = "John Doe"; : declare a dynamic variable (using dollar sign)
 - echo "html codes"; : invoke an html codes inside double ticks and display them in a page
+
+Functions:
+- strtoupper($myString) : change myString to all uppercase letter
+- strtolower($myString) : change myString to all lowercase letter
+- strlen($myString) : return the length of myString
+- echo $myString[1]; : return the index 1 letter from myString
+- $myString[0] = "B"; : change first letter (index 0) in myString to "B"
+- str_replace(<string to replace>, <replace with>, $myString) : replace a part of string with new one in myString
+- echo substr($myString, 12, 4); : substring technique, return the 4 letters after index 12 from myString (example: 'Universitas Indonesia' => 'Indo')
