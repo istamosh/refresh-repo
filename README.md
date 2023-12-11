@@ -103,6 +103,7 @@ Git Cheat Sheet
 - git stash list                                          = view list of stashes (addressed by index)
 - git stash apply <index number>                          = apply stashed files into current branch
 - git stash pop <savename>                                = pop out stashed works on current branch (similar to apply)
+- git restore --staged <file>                             = opposite of git add <file>, remove a file from staging area
 
 Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
