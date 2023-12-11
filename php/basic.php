@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Lovely PHP Page</title>
+    <title>Learn the Basics!</title>
 </head>
 <body>
     <!-- PHP Section -->
@@ -53,16 +53,45 @@
     
         // change first letter to B
         $mixedCase[0] = "B";
-        echo $mixedCase; echo "<br>"; echo "<br>";
+        echo $mixedCase; echo "<br><br>";
 
         // find and replace certain characters function
         $univName = "Universitas Indonesia";
-        echo str_replace("Universitas", "University of", $univName); echo "<br>"; echo "<br>";
+        echo str_replace("Universitas", "University of", $univName); echo "<br><br>";
     
         // using substring function, 12 is the starting point index
         echo substr($univName, 12); echo "<br>";
         // grab 4 characters length, starting from index 12
-        echo substr($univName, 12, 4); echo "<br>"; echo "<br>";
+        echo substr($univName, 12, 4); echo "<br><br>";
+    
+        // will printout the answer directly
+        echo 5 + 9; echo "<br>";
+        echo 5.7 * 9; echo "<br>";
+        echo 10 % 3; echo "<br><br>";
+
+        // PHP uses PEMDAS order of operations
+        echo 4 + 10 * 5 / 2 - 3; echo "<br><br>";
+
+        // integer variable manipulation
+        $aNumber = 9;
+        $aNumber++;
+        echo $aNumber; echo "<br>";
+        $aNumber - 5;
+        echo $aNumber; echo "<br><br>";
+
+        // using absolute function
+        echo abs(-19); echo "<br><br>";
+
+        // using power
+        echo pow(2, 3); echo "<br><br>";
+
+        // using square root
+        echo sqrt(100); echo "<br><br>";
+
+        // using round, floor, and ceil
+        $myFloatNum = 3.5;
+        echo "original number: $myFloatNum <br>";
+        echo round($myFloatNum),", ",floor($myFloatNum),", ",ceil($myFloatNum); echo "<br><br>";
     ?>
 </body>
 </html>
