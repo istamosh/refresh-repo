@@ -25,5 +25,47 @@
             echo "Age input is ",$_GET["textBoxAge"],"<br>";
         endif;
     ?>
+
+    <form action="form.php" method="get">
+        Addition calculator <br>
+        <input type="number" name="numBox1" id=""> <br>
+        <input type="number" name="numBox2" id="">
+        <input type="submit" value="Calculate!"> <br>
+    </form>
+
+    <?php
+        if(isset($_GET["numBox1"]) && isset($_GET["numBox2"])):
+            echo "Answer= ",$_GET["numBox1"]+$_GET["numBox2"],"<br>";
+            echo "<br>";
+        endif;
+    ?>
+
+    <br>
+
+    <form action="form.php" method="get">
+        Mad Lib Game <br>
+        Color: <input type="text" name="color" id=""> <br>
+        Plural Noun: <input type="text" name="pluralNoun" id=""> <br>
+        Celebrity: <input type="text" name="celebrity" id=""> <br>
+        <input type="submit" value="Play!">
+    </form>
+
+    <?php
+        $color = $_GET["color"];
+        $pluralNoun = $_GET["pluralNoun"];
+        $celebrity = $_GET["celebrity"];
+
+        if (empty($color) || empty($pluralNoun) || empty($celebrity)):
+            echo "Roses are _____ <br>";
+            echo "_____ are blue <br>";
+            echo "I am _____ <br>";
+            echo "and I will find you <br>";
+        else:
+            echo "Roses are $color <br>";
+            echo "$pluralNoun are blue <br>";
+            echo "I am $celebrity <br>";
+            echo "and I will find you <br>";
+        endif;
+    ?>
 </body>
 </html>

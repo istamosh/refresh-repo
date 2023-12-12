@@ -39,6 +39,7 @@ Emmet Abbrev. shortcut:
 - input:t = create text box for input
 - input:s = create submit button (value is for the button name)
 - input:number = create text box for number input (built-in up down button)
+- input:submit = create submit button of current form its on
 
 Syntaxes:
 - <?php ... ?> : insert php section under HTML boilerplate, all php code goes inside "..."
@@ -62,3 +63,16 @@ Functions:
 - echo floor(3.6); : rounds down
 - echo ceil(3.2); : rounds up
 - isset($_GET["textBox"]) : check if array value inside textBox element array form is set and not empty
+- empty($myVariable) : check if this variable are zero values, undefined, null, or empty
+
+Code Blocks:
+
+if ():
+    //your codes
+else:
+    //your codes
+endif;
+
+
+Note:
+- Submit feature on form will display the input box name and their respective values on page address
