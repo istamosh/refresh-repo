@@ -40,6 +40,7 @@ Emmet Abbrev. shortcut:
 - input:s = create submit button (value is for the button name)
 - input:number = create text box for number input (built-in up down button)
 - input:submit = create submit button of current form its on
+- input:password = create password input box
 
 Syntaxes:
 - <?php ... ?> : insert php section under HTML boilerplate, all php code goes inside "..."
@@ -76,3 +77,5 @@ endif;
 
 Note:
 - Submit feature on form will display the input box name and their respective values on page address
+- Be careful when using form tag method, "get" method will make every submitted inputs displayed not only on own current page, but in address page too (with question symbol and variable name with value), even with passwords.
+- Forms' "post" method will prevent displaying any submitted input on address bar, including passwords.
