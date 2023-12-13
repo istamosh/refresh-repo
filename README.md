@@ -29,6 +29,7 @@ Windows Terminal Directory Nav.
 Visual Studio Shortcuts
 - Ctrl + ` = Open internal terminal (cmd)
 - Ctrl + Shift + P = Open command palette
+- CTRL + K, CTRL + T = Open Custom Themes
 
 Visual Studio Git Status
 - U = Untracked
@@ -97,6 +98,8 @@ Git Cheat Sheet
 - git config --global user.email "<email>"                = set global email address for commits
 - git config --global user.name "<name>"                  = set global name for commits
 - git config --global alias.ac "commit -am"               = set global configuration alias for automatic adding files and local commits ("-am" flag), then you can use your custom alias by using command "git ac <commit message>". Using alias makes you work more faster (QoL). More alias explanation on [here](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases).
+- git config --global --edit                              = edit the global config, using cmd-line VIM editor. See below.
+- git config --global --unset <alias.myalias>           = remove "alias.myalias" alias settings from global configuration
 - git rebase <branch>                                     = rebase current branch you worked on against the desired branch
 - git fetch origin main                                   = fetch branch from remote branch named "main" into "origin/main" local branch
 - git stash save <savename>                               = stash any changes after git add before working on other branch
@@ -104,6 +107,13 @@ Git Cheat Sheet
 - git stash apply <index number>                          = apply stashed files into current branch
 - git stash pop <savename>                                = pop out stashed works on current branch (similar to apply)
 - git restore --staged <file>                             = opposite of git add <file>, remove a file from staging area
+
+# VIM Editor Navigation:
+Exit Commands (press ":"), after command press Enter:
+- :wq = write changes and quit editor
+- :q! = quit without saving
+- :q = quit with prompt (overwrite changes, etc.)
+- (Insert button) = shows :INSERT: mode, allowing edits, if done press "Esc button".
 
 Merging
 1. git checkout <branchname> = checkout this branch as a base of merging process
