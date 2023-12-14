@@ -48,6 +48,7 @@ Syntaxes:
 - echo "html codes"; : invoke an html codes inside double ticks and display them in a page
 - echo 4 + 2 * 3; : echo directly the answer, which is 10 (PEMDAS order)
 - echo $_GET["something"]; : display value from passed element of "something"
+- echo $myArray[0]; : access first element of myArray
 
 Functions:
 - strtoupper($myString) : change myString to all uppercase letter
@@ -65,8 +66,18 @@ Functions:
 - echo ceil(3.2); : rounds up
 - isset($_GET["textBox"]) : check if array value inside textBox element array form is set and not empty
 - empty($myVariable) : check if this variable are zero values, undefined, null, or empty
+- count($myArray); : count total element inside myArray
 
-Code Blocks:
+# Warning suppression:
+PHP Warning: Array to string conversion =
+- print_r($myArray) = prints human-readable information
+- var_dump($myArray) = dumps the variable information onto the screen
+- echo(implode(", ", $myArray)); = joins the elements with comma separator
+- foreach($myArray as $value){ echo $value, "\n"; } = iterate every elements to be printed
+- echo json_encode($myArray); = display the entire array structure
+
+# Code Blocks:
+-If Statements
 
 if ():
     //your codes
@@ -74,6 +85,12 @@ else:
     //your codes
 endif;
 
+-Functions
+
+function myFunction(arguments){
+    //do something with passed arguments
+}
+myFunction(arguments);
 
 Note:
 - Submit feature on form will display the input box name and their respective values on page address
