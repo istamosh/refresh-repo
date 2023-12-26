@@ -1,7 +1,7 @@
 # Python Input and Output Exercise
 # https://pynative.com/python-input-and-output-exercise/
 
-#''' Comment block (skip prev. exercise)
+''' Comment block (skip prev. exercise)
 
 # Exercise 1: Accept numbers from a user
 # Write a program to accept two numbers from the user and calculate multiplication
@@ -84,7 +84,7 @@ def castFloat():
 castFloat()
 
 # Exercise 6: Write all content of a given file into a new file by skipping line number 5
-# located in .\pynative\res\io\test.txt
+# located in ./pynative/res/io/test.txt
 print("6. Answer:")
 
 def deleteLine5(path, fileName):
@@ -156,8 +156,6 @@ while True:
         continue
     break
 
-#'''
-
 # Exercise 10: Read line number 4 from the following file
 print("10. Answer:")
 
@@ -185,3 +183,21 @@ while True:
         print("File contains not enough line to read.")
         continue
     break
+
+'''
+
+# Extra
+# Ask user how many input they want to, with List Comprehension variants
+def howManyInput(num: int):
+    _list = [];
+    for i in range(num):
+        _input = input(f"Input number {i+1}: ")
+        _list.append(_input)
+
+    print(*_list)
+
+def howManyInputLC(num: int):
+    _list = [input(f"Input number {i+1}: ") for i in range(num)]
+    print(*_list)
+
+howManyInputLC(int(input("Enter how many input you want: ")))
