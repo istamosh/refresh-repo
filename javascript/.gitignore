@@ -1,4 +1,5 @@
 # JS directory
-*
+# add asterisk sign (*) without hashtag sign (#) to ignore all files (wildcard) on this directory onwards
+#*
 # Gitignore file
 !.gitignore
