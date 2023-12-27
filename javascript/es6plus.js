@@ -35,8 +35,20 @@ last = 'Clementine'
 console.log(first + last)
 
 // object literal
-function addressMaker(city, state){
+function addrMaker(city, state){
     const fullAddress = {city, state}
     console.log(fullAddress)
 }
-addressMaker('West Jakarta', 'Jakarta Region Special Capital')
+addrMaker('West Jakarta', 'Jakarta Region Special Capital')
+
+// object literal challenge
+const addressMaker = (address) => {
+    const newAddress = {
+        city: address.city,
+        state: address.state,
+        country: 'United States'
+    }
+    const {city: ct, state: st, country: cy} = newAddress
+    console.log(`${ct}, ${st}, ${cy}`);
+}
+addressMaker({city:'Austin', state: 'Texas'})
