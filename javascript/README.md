@@ -8,6 +8,10 @@ Tools used:
 - Node.js
 - Browser
 
+Check if tools are installed (for every installments, needs restart the VSCode):
+- node -v = check node.js version
+- npm -v = check npm version
+
 VSCode shortcut:
 - ALT+L, ALT+O = Run file with live server on default browser (on HTML requires head or body)
 - CTRL+K, Q = Start/Restart Quokka on current file, view in Output tab
