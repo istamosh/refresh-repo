@@ -155,3 +155,10 @@ Commands:
 - npm i -g create-react-app = install CRA module globally
 - npx create-react-app project-dir
 - cd project-dir = this is the project location of react app
+- npm start = start the development server (still inside project-dir), npm start doesn't require Live Server because every saves npm automatically restarts the environment
+
+Working on different machines:
+- Create different directory for copying node_modules only
+- npx create-react-app project-dir
+- Copy node_modules to Gits' project-dir
+
