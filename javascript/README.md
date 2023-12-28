@@ -146,3 +146,12 @@ switch(params){
 - 'if' statement and 'else if' statement uses condition, while 'else' does not.
 - 'switch' statement is just like 'if' but the cases (case) and parameter matching are using strict equal (===), then the 'default' keyword is just like final 'else'.
 - Hoisting is a function call BEFORE the function itself is being defined (function is placed below the caller, not from the top, like usual top to bottom coding flow), Regular function can be hoisted while Arrow function cannot.
+
+# Subdir: React Library
+Tools used:
+- Node.js
+
+Commands:
+- npm i -g create-react-app = install CRA module globally
+- npx create-react-app project-dir
+- cd project-dir = this is the project location of react app
